@@ -25,6 +25,15 @@ public class ChromeDriverCreator {
 		logger.info("Location of chromiun driver: " + chromiumDriverLoc);
 		System.setProperty("webdriver.chrome.driver", chromiumDriverLoc);
 		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-setuid-sandbox");
+		System.setProperty("webdriver.chrome.args", "--disable-logging");
+		System.setProperty("webdriver.chrome.silentOutput", "true");
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+		chromeOptions.addArguments("disable-infobars"); 
+		chromeOptions.addArguments("--disable-extensions"); 
+		chromeOptions.addArguments("--disable-gpu"); 
+		chromeOptions.addArguments("window-size=1024,768"); 
 	}
 	
 	
